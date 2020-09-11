@@ -16,11 +16,8 @@ useEffect( ()=>{
       .get()  
       .then(function(querySnapshot) {
         
-         console.log(querySnapshot.docs[0].data().name);
-         setData4(querySnapshot.docs);
-
-       
-            
+       //  console.log(querySnapshot.docs[0].data().name);
+         setData4(querySnapshot.docs);  
           })
   }
 

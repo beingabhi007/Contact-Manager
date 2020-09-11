@@ -9,7 +9,7 @@ export default function Navbar() {
     return (
         
         <> 
-<nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav className="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
 <span 
 onClick={ () => { history.push("/") }}
 className="navbar-brand">Contact Management</span>
@@ -39,7 +39,9 @@ onClick={ () => { firebase.auth().signOut().then( function () {
 </li>
 </ul>
 </div>
-</nav>
+</nav> 
+
+<br/><br/>
         </>
         
     )

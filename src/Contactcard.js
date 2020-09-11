@@ -1,13 +1,25 @@
 import React from 'react'
+import firebase from "firebase/app"
+import { useHistory } from 'react-router-dom';
+
+
 
 export default function Contactcard({name,contact,id})
 
 {
- 
+  const history = useHistory
   
   function handleSubmit (id) 
-  {
-     console.log(id);
+  { 
+      
+    firebase.firestore()
+    .collection(firebase.auth().currentUser.email).doc(id).delete()
+    .then( function() {
+    history.push("/home");
+    })
+    .catch(function(error) {
+      console.error("Error removing document: ", error);
+  });
      
   } 
 
